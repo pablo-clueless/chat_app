@@ -925,6 +925,8 @@ body {
 }
 
 .team-channel-list__message.loading {
+    display: flex;
+    align-items: center;
     height: 115px;
 }
 
@@ -1786,3 +1788,13 @@ div.rta__autocomplete.str-chat__emojisearch {
         display: none;
     }
 }
+
+.emoji__wrapper {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.07);
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+  }

@@ -16,7 +16,7 @@ const ChannelInner = ({ setIsEditing }) => {
       parent_id: message.parent?.id,
       parent: message.parent,
       text: message.text,
-    }
+    };
     
     if (giphyState) {
       updatedMessage = { ...updatedMessage, text: `/giphy ${message.text}` }
@@ -26,7 +26,7 @@ const ChannelInner = ({ setIsEditing }) => {
       sendMessage(updatedMessage)
       setGiphyState(false)
     }
-  }
+  };
 
   return (
     <GiphyContext.Provider value={{ giphyState, setGiphyState }}>
