@@ -60,7 +60,7 @@ body {
 
 .auth__form-container_fields-content p {
     font-size: 1.5rem;
-    color: #05245a;
+    color: var(--secondary-color);
     font-weight: 900;
 }
 
@@ -82,11 +82,11 @@ body {
 
 .auth__form-container_fields-content_input input {
     padding: 0.55rem 0.4rem;
-    border: 1px solid rgb(184, 196, 194);
+    border: thin solid rgb(184, 196, 194);
     border-radius: 4px;
     font-size: 14px;
     outline: none;
-    transition: all 150ms ease-in-out 0s;
+    transition: all 500ms ease-in-out 0s;
     width: 85%;
     background: #fff;
 }
@@ -103,7 +103,7 @@ body {
 
 .auth__form-container_fields-content_input input:focus,
 .auth__form-container_fields-content_input input:active {
-    box-shadow: 0px 0px 0px 1.5px var(--secondary-color);
+    box-shadow: 0px 0px 0px 0.5px var(--secondary-color);
     border-color: var(--secondary-color);
 }
 
@@ -133,7 +133,8 @@ body {
 }
 
 .auth__form-container_fields-content_button button:hover {
-    background: #0066ff;
+    background: transparent;
+    color: var(--secondary-color);
 }
 
 .auth__form-container_fields-account {
@@ -151,9 +152,10 @@ body {
 }
 
 .auth__form-container_fields-account span {
-    color: #05245a;
+    color: var(--secondary-color);
     cursor: pointer;
     font-weight: 700;
+    margin-left: 8px;
 }
 
 @media screen and (max-width: 800px) {
