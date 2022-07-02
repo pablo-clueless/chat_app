@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
 :root {
-    --primary-color: #7BAEF9;
-    --primary-color-alpha: var(--secondary-color)1a;
-    --secondary-color: #3E7AC0;
+    --primary-color: #FDCB41;
+    --primary-color-alpha: #005fff1a;
+    --secondary-color: #CA9E00;
     --barlow: 'Barlow', sans-serif;
 }
 
@@ -452,12 +452,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
+    height: 36px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     margin-bottom: 8px;
     border: 1px solid transparent;
     width: 95%;
+    transition: 0.5s all ease;
 }
 
 .channel-search__input__wrapper:focus-within {
