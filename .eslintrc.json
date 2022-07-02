@@ -15,10 +15,16 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "prettier",
+        "eslint"
     ],
     "rules": {
-        "semi": ["warning", "never"],
-        "quotes":["error","single"]
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ]
     }
 }
