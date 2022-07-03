@@ -1,3 +1,4 @@
+export { default as Alert } from './Alert'
 export { default as Auth } from './Auth'
 export { default as ChannelContainer } from './ChannelContainer'
 export { default as ChannelInner } from './ChannelInner'

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
+import { Alert } from './'
 import { signup } from '../assets'
 
 const cookies = new Cookies()
@@ -18,6 +19,7 @@ const initialState = {
 const Auth = () => {
     const [isSignup, setIsSignup] = useState(true)
     const [form, setForm] = useState(initialState)
+    const [error, setError] = useState(null)
     
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value})
@@ -30,29 +32,37 @@ const Auth = () => {
         
         const URL = 'http://localhost:5000/auth'
 
-        const {data: { token, userId, hashedPassword }} = await axios.post(`${URL}/${isSignup ? 'signup':'login'}`, {
-            fullName, username, phoneNumber, avatarURL, password
-        })
-
-        cookies.set('token', token)
-        cookies.set('username', username)
-        cookies.set('fullName', fullName)
-        cookies.set('userId', userId)
-
-        if(isSignup) {
-            cookies.set('phoneNumber', phoneNumber)
-            cookies.set('avatarURL', avatarURL)
-            cookies.set('hashedPassword', hashedPassword)
+        try {
+            const {data: { token, userId, hashedPassword }} = await axios.post(`${URL}/${isSignup ? 'signup':'login'}`, {
+                fullName, username, phoneNumber, avatarURL, password
+            })
+    
+            cookies.set('token', token)
+            cookies.set('username', username)
+            cookies.set('fullName', fullName)
+            cookies.set('userId', userId)
+    
+            if(isSignup) {
+                cookies.set('phoneNumber', phoneNumber)
+                cookies.set('avatarURL', avatarURL)
+                cookies.set('hashedPassword', hashedPassword)
+            }
+    
+            window.location.reload()
+        } catch (error) {
+            setError(error.message)
         }
-
-        window.location.reload()
     }
 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup)
     }
+
+    const clearError = () => setError(null)
     
   return (
+    <>
+    {error && <Alert type='error' message={error} onClear={clearError} />}
     <div className="auth__form-container">
         <div className="auth__form-container_fields">
             <div className="auth__form-container_fields-content">
@@ -117,6 +127,7 @@ const Auth = () => {
             <img src={signup} alt="signup image" />
         </div>
     </div>
+    </>
   )
 }
 

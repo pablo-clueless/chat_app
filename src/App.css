@@ -612,7 +612,7 @@ body {
 .channel-name-input__wrapper input {
     font-size: 18px;
     color: rgba(0, 0, 0, 0.5);
-    height: 50px;
+    height: 40px;
     width: 540px;
     background: #f7f6f8;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -727,8 +727,8 @@ body {
 }
 
 .user-item__invite-empty {
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
     background: #f7f6f8;
     border: 1px solid #dedddf;
     border-radius: 14px;
@@ -1789,12 +1789,39 @@ div.rta__autocomplete.str-chat__emojisearch {
     }
 }
 
-.emoji__wrapper {
+.alert__wrapper {
+    min-width: 250px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
     display: flex;
     align-items: center;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.07);
-    border: 1px solid #e0e0e0;
-    padding: 8px;
-  }
+    justify-content: space-between;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+}
+
+.alert__wrapper p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.alert__wrapper.error {
+    background: #f0afaf;
+    color: #FF0000;
+}
+
+.alert__wrapper.success {
+    background: #adf5c6;
+    color: #00C445;
+}
+
+.alert__wrapper-button {
+    width: 24px;
+    height: 24px;
+    color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
