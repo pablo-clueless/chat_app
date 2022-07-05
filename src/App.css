@@ -1687,7 +1687,7 @@ div.rta__autocomplete.str-chat__emojisearch {
     right: -2%;
     top: 50%;
     border-radius: 50%;
-    z-index: -1;
+    z-index: 4;
     cursor: pointer;
 }
 
