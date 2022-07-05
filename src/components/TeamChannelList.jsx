@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Alert } from './'
 import { AddChannel } from '../assets'
 
 const TeamChannelList = ({children, error = false, loading, type, isCreating, setIsCreating, setIsEditing, setCreateType, setToggleContainer}) => {
@@ -24,6 +25,8 @@ const TeamChannelList = ({children, error = false, loading, type, isCreating, se
   }
 
   return (
+    <>
+    {error && (<Alert type='error' message={error.message} />)}
     <div className='team-channel-list'>
       <div className="team-channel-list__header">
         <p className="team-channel-list__header__title">
@@ -33,6 +36,7 @@ const TeamChannelList = ({children, error = false, loading, type, isCreating, se
       </div>
       {children}
     </div>
+    </>
   )
 }
 
