@@ -1,7 +1,7 @@
 import React from 'react'
 import { Channel, useChatContext, MessageTeam } from 'stream-chat-react'
 
-import { ChannelInner, CreateChannel, EditChannel } from './'
+import { ChannelInner, CreateChannel, CustomEmojiPicker, EditChannel } from './'
 
 const ChannelContainer = ({ isCreating, setIsCreating, isEditing, setIsEditing, createType }) => {
   const { channel } = useChatContext()

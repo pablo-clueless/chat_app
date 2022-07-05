@@ -1,21 +1,15 @@
-import React from 'react'
-import { useEmojiContext, useMessageInputContext } from 'stream-chat-react'
+import React, { useEffect, useRef } from 'react'
+import data from '@emoji-mart/data'
+import { Picker } from 'emoji-mart'
 
 const CustomEmojiPicker = () => {
-    const { Emoji, emojiConfig } = useEmojiContext();
-    const { onSelectEmoji } = useMessageInputContext();
-  
-    const { emojiData } = emojiConfig || {};
-    const customEmojis = ['fried_egg', 'croissant', 'bacon', 'waffle', 'pancakes', 'doughnut'];
-  
+  const ref = useRef()
+
+  useEffect(() => {
+    new Picker({data, ref})
+  },[])
     return (
-      <div className='emoji-picker__wrapper'>
-        {customEmojis.map((emoji) => (
-          <Suspense fallback={null} key={i}>
-            <Emoji onClick={onSelectEmoji} emoji={emoji} size={40} data={emojiData} />
-          </Suspense>
-        ))}
-      </div>
+      <div ref={ref} />
     )
 }
 
