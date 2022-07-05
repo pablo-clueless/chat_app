@@ -1,6 +1,8 @@
 import React from 'react'
 import { Avatar, useChatContext } from 'stream-chat-react'
 
+import { LoadingIcon } from '../assets'
+
 const channelByUser = async ({ client, setActiveChannel, channel, setChannel }) => {
   const filters = {
     type: 'messaging',
@@ -64,7 +66,7 @@ const ResultsDropdown = ({ teamChannels, directChannels, focusedId, loading, set
       <p className='channel-search__results-header'>Channels</p>
       {loading && !teamChannels.length && (
         <p className='channel-search__results-header'>
-          <i>Loading...</i>
+          <i>Loading </i>
         </p>
       )}
       {!loading && !teamChannels.length ? (

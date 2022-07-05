@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie'
 import axios from 'axios'
 
 import { Alert } from './'
-import { signup } from '../assets'
+import { LoadingIcon, signup } from '../assets'
 
 const cookies = new Cookies()
 
@@ -19,6 +19,7 @@ const initialState = {
 const Auth = () => {
     const [isSignup, setIsSignup] = useState(true)
     const [form, setForm] = useState(initialState)
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     
     const handleChange = (e) => {
@@ -28,6 +29,7 @@ const Auth = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         
+        setLoading(true)
         const { username, phoneNumber, avatarURL, password} = form
         
         const URL = import.meta.env.VITE_CHAT_SERVER
@@ -47,10 +49,12 @@ const Auth = () => {
                 cookies.set('avatarURL', avatarURL)
                 cookies.set('hashedPassword', hashedPassword)
             }
-    
+            
             window.location.reload()
+            setLoading(false)
         } catch (error) {
             setError(error.message)
+            setLoading(false)
         }
     }
 
@@ -108,7 +112,10 @@ const Auth = () => {
 
                     <div className="auth__form-container_fields-content_button">
                         <button type='submit'>
-                            {isSignup ? 'Sign Up' : 'Sign In'}
+                            {loading ?
+                             (<LoadingIcon />) : 
+                             `${isSignup ? 'Sign Up' : 'Sign In'}`
+                             }
                         </button>
                     </div>
                 </form>

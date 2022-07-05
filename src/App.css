@@ -26,7 +26,7 @@ body {
 }
 
 .auth__form-container_fields {
-    flex: 2;
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +36,7 @@ body {
 }
 
 .auth__form-container_image {
-    flex: 3;
+    flex: 2;
     display: flex;
     box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.05);
 }
@@ -121,6 +121,8 @@ body {
 }
 
 .auth__form-container_fields-content_button button {
+    min-width: 90px;
+    height: 40px;
     border-radius: 4px;
     background: var(--secondary-color);
     border: 1px solid var(--secondary-color);
@@ -135,6 +137,10 @@ body {
 .auth__form-container_fields-content_button button:hover {
     background: transparent;
     color: var(--secondary-color);
+}
+
+.auth__form-container_fields-content_button button:hover .loading-spinner circle {
+    stroke: var(--secondary-color);
 }
 
 .auth__form-container_fields-account {
@@ -1839,4 +1845,37 @@ div.rta__autocomplete.str-chat__emojisearch {
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.07);
     border: 1px solid #e0e0e0;
     padding: 8px;
-  }
+}
+
+.loading-spinner {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+}
+
+.loading-spinner circle {
+    stroke: #FFF;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+@keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+}
+  

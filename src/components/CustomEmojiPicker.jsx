@@ -3,11 +3,12 @@ import data from '@emoji-mart/data'
 import { Picker } from 'emoji-mart'
 
 const CustomEmojiPicker = () => {
-  const ref = useRef()
+  const ref = useRef(null)
 
   useEffect(() => {
     new Picker({data, ref})
   },[])
+  
     return (
       <div ref={ref} />
     )

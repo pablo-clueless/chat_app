@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Alert } from './'
-import { AddChannel } from '../assets'
+import { AddChannel, LoadingIcon } from '../assets'
 
 const TeamChannelList = ({children, error = false, loading, type, isCreating, setIsCreating, setIsEditing, setCreateType, setToggleContainer}) => {
   if(error) {
@@ -18,7 +18,7 @@ const TeamChannelList = ({children, error = false, loading, type, isCreating, se
     return (
       <div className='team-channel-list'>
         <p className="team-channel-list__message loading">
-          {type === 'team' ? 'Channels' : 'Messages'} loading...
+          {type === 'team' ? 'Channels' : 'Messages '} <LoadingIcon ml={10} /> 
         </p>
       </div>
     )
