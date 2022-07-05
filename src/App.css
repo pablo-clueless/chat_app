@@ -1838,16 +1838,6 @@ div.rta__autocomplete.str-chat__emojisearch {
     cursor: pointer;
 }
 
-.emoji-picker__wrapper {
-    display: flex;
-    align-items: center;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.07);
-    border: 1px solid #e0e0e0;
-    padding: 8px;
-}
-
 .loading-spinner {
     animation: rotate 2s linear infinite;
     z-index: 2;
