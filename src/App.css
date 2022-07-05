@@ -1682,12 +1682,13 @@ div.rta__autocomplete.str-chat__emojisearch {
     display: none;
     height: 50px;
     width: 50px;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     position: absolute;
-    right: -2%;
+    right: -3%;
     top: 50%;
-    border-radius: 50%;
-    z-index: 4;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(90deg);
+    z-index: 6;
     cursor: pointer;
 }
 
