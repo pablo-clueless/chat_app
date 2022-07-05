@@ -1802,7 +1802,7 @@ div.rta__autocomplete.str-chat__emojisearch {
     color: var(--secondary-color);
     padding: 0.25rem 1rem;
     border-radius: 5px;
-    border-bottom: 2px solid var(--secondary-color);
+    border: 1px solid var(--secondary-color);
     z-index: 5;
 }
 
