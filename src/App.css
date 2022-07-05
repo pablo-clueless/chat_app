@@ -1802,6 +1802,7 @@ div.rta__autocomplete.str-chat__emojisearch {
     color: var(--secondary-color);
     padding: 0.25rem 1rem;
     border-radius: 5px;
+    border-bottom: 2px solid var(--secondary-color);
     z-index: 5;
 }
 
@@ -1813,11 +1814,13 @@ div.rta__autocomplete.str-chat__emojisearch {
 .alert__wrapper.error {
     background: #f0afaf;
     color: #FF0000;
+    border-color: #FF0000;
 }
 
 .alert__wrapper.success {
     background: #adf5c6;
     color: #00C445;
+    border-color: #00C445;
 }
 
 .alert__wrapper-button {

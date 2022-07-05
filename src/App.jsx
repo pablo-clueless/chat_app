@@ -3,10 +3,9 @@ import { StreamChat } from 'stream-chat'
 import { Chat } from 'stream-chat-react'
 import Cookies from 'universal-cookie'
 
+import { Auth, ChannelContainer, ChannelListContainer } from './components'
 import 'stream-chat-react/dist/css/index.css'
 import './App.css'
-
-import { Auth, ChannelContainer, ChannelListContainer } from './components'
 
 const apiKey = import.meta.env.VITE_API_KEY
 const client = StreamChat.getInstance(apiKey)
