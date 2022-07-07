@@ -31,7 +31,7 @@ const ChannelContainer = ({ isCreating, setIsCreating, isEditing, setIsEditing, 
 
   return (
     <div className="channel__container">
-      <Channel EmojiPicker={CustomEmojiPicker} EmptyStateIndicator={EmptyState} Message={(messageProps, i) => <MessageTeam key={i} {...messageProps} />}  channel={channel}>
+      <Channel EmptyStateIndicator={EmptyState} Message={(messageProps, i) => <MessageTeam key={i} {...messageProps} />}  channel={channel}>
         <ChannelInner setIsEditing={setIsEditing} />
       </Channel>
     </div>
